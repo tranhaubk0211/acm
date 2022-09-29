@@ -1,0 +1,13 @@
+#privileged.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+   app: nginx-privileged
+ name: nginx-privileged-disallowed
+spec:
+ containers:
+ - image: nginx
+   name: nginx
+   securityContext:
+     privileged: true
